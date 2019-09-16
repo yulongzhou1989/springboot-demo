@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+<body>
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <i class="fa fa-github-square" aria-hidden="true"></i>&nbsp;Tweet Dashboard
+            </h1>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <table class="table is-hoverable is-fullwidth">
+            <thead>
+            <th>id</th>
+            <th>user</th>
+            <th>content</th>
+            <th>Time</th>
+            </thead>
+            <tbody>
+            <tr data-th-each="tweet : ${tweets}">
+                <td>[[${tweet.id}]]</td>
+                <td>[[${tweet.userId}]]</td>
+                <td>[[${tweet.content}]]</td>
+                <td>
+                    <time data-th-attr="datetime=${tweet.createTime}">[[${tweet.createTime}]]</time>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>
